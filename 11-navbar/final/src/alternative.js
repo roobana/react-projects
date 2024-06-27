@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
-import logo from './logo.svg';
+import React, { useState, useRef, useEffect } from "react";
+import { FaBars } from "react-icons/fa";
+import { links, social } from "./data";
+import logo from "./logo.svg";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -13,23 +13,23 @@ const Navbar = () => {
   const linkStyles = {
     height: showLinks
       ? `${linksRef.current.getBoundingClientRect().height}px`
-      : '0px',
+      : "0px",
   };
   return (
     <nav>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <img src={logo} className='logo' alt='logo' />
-          <button className='nav-toggle' onClick={toggleLinks}>
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} className="logo" alt="logo" />
+          <button className="nav-toggle" onClick={toggleLinks}>
             <FaBars />
           </button>
         </div>
         <div
-          className='links-container'
+          className="links-container"
           ref={linksContainerRef}
           style={linkStyles}
         >
-          <ul className='links' ref={linksRef}>
+          <ul className="links" ref={linksRef}>
             {links.map((link) => {
               const { id, url, text } = link;
               return (
@@ -40,7 +40,7 @@ const Navbar = () => {
             })}
           </ul>
         </div>
-        <ul className='social-icons'>
+        <ul className="social-icons">
           {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
             return (
