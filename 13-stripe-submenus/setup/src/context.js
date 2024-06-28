@@ -1,2 +1,6 @@
-import React, { useState, useContext } from 'react'
-import sublinks from './data'
+import React, { useState, useContext, createContext } from "react";
+import sublinks from "./data";
+
+const AppContext = createContext("stripe");
+
+export default AppContext;

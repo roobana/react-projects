@@ -1,9 +1,26 @@
-import React from 'react'
-import { FaTimes } from 'react-icons/fa'
-import sublinks from './data'
+import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import sublinks from "./data";
+import logo from "./images/logo.svg";
 
 const Sidebar = () => {
-  return <h2>sidebar component</h2>
-}
+  const [productClick, setProductClick] = useState(false);
+  const handleProduct = () => {
+    setProductClick(!productClick);
+  };
+  return (
+    <nav className="nav-header">
+      <div>
+        <img src={logo} alt="strapi" />
+        <button onMouseOver={handleProduct} className="btn">
+          Product
+        </button>
+        <button className="btn">developers</button>
+        <button className="btn">company</button>
+        <ul>{}</ul>
+      </div>
+    </nav>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
